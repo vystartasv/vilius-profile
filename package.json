@@ -1,6 +1,7 @@
 {
   "name": "vilius-profile",
   "version": "0.1.0",
+  "homepage": "http://vystartasv.github.io/vilius-profile",
   "private": true,
   "dependencies": {
     "react": "^16.8.6",
@@ -8,6 +9,8 @@
     "react-scripts": "3.0.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -27,5 +30,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
   }
 }
