@@ -17,10 +17,10 @@
 .env.development.local
 .env.test.local
 .env.production.local
-.idea
-.idea/*
-.idea/inspectionProfiles/*
-.idea/jsLinters/*
+.idea/
+.idea/**
+.idea/inspectionProfiles/**
+.idea/jsLinters/**
 npm-debug.log
 /*.env
 .eslintrc
