@@ -4,7 +4,7 @@ import { Container, ListGroup } from 'react-bootstrap';
 
 export default function AboutMeStack(props) {
   return (
-    <Container flush>
+    <Container flush className="bg-light rounded">
       <h1>Languages and frameworks I am working on</h1>
       <ListGroup>
         <ListGroup.Item>JavaScript</ListGroup.Item>

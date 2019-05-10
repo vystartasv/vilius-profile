@@ -4,7 +4,7 @@ import HomeStack from './HomeStack';
 export default class Home extends React.Component {
   render() {
     return (
-      <HomeStack class="card mb-4 shadow-sm" />
+      <HomeStack class="card mb-4 shadow rounded" />
     );
   }
 }

@@ -4,7 +4,7 @@ import AboutMeStack from './AboutMeStack';
 export default class AboutMe extends React.Component {
   render() {
     return (
-      <AboutMeStack />
+      <AboutMeStack className="rounded" />
     );
   }
 }

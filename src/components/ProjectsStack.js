@@ -6,7 +6,7 @@ import {
 export default function ProjectsStack() {
   return (
     <Container>
-      <Row className="justify-content-md-center">
+      <Row className="justify-content-md-center bg-light rounded">
         <Col md="auto">
           <Figure fluid className="shadow">
             <Figure.Image
@@ -28,7 +28,8 @@ export default function ProjectsStack() {
           </Figure>
         </Col>
       </Row>
-      <Row className="justify-content-md-center">
+      <Row className="justify-content-md-center bg-light rounded">
+        <br />
         <Col md="auto">
           <Figure fluid className="shadow">
             <Figure.Image
@@ -36,7 +37,7 @@ export default function ProjectsStack() {
               alt="screenshot of the project"
               src={require('./../common/images/react-forced-render.png')}
             />
-            <Figure.Caption className="lead text-primary">
+            <Figure.Caption className="lead">
               React forced render project
             </Figure.Caption>
             <Nav className="justify-content-center" activeKey="/home">

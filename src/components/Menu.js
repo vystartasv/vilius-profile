@@ -8,13 +8,13 @@ export default class Menu extends React.Component {
         <Navbar
           bg="primary"
           variant="dark"
-          className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm"
+          className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-light border-bottom shadow rounded"
         >
-          <Navbar.Brand href="/vilius-profile/#/" className="p-1 text-dark">Home</Navbar.Brand>
           <Nav className="mr-auto">
-            <Nav.Link href="/vilius-profile/#/projects" className="p-2 text-dark">Projects</Nav.Link>
-            <Nav.Link href="/vilius-profile/#/about-me" className="p-2 text-dark">About Me</Nav.Link>
-            <Nav.Link href="/vilius-profile/#/contacts" className="p-2 text-dark">Contacts</Nav.Link>
+            <Navbar.Brand href="/vilius-profile/#/" className="text-primary">Home</Navbar.Brand>
+            <Nav.Link href="/vilius-profile/#/projects" className="text-secondary">Projects</Nav.Link>
+            <Nav.Link href="/vilius-profile/#/about-me" className="text-info">About Me</Nav.Link>
+            <Nav.Link href="/vilius-profile/#/contacts" className="text-primary">Contacts</Nav.Link>
           </Nav>
         </Navbar>
       </div>
