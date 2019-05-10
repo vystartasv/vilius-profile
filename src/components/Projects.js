@@ -4,7 +4,7 @@ import ProjectsStack from './ProjectsStack';
 export default class Projects extends React.Component {
   render() {
     return (
-      <ProjectsStack />
+      <ProjectsStack class="card mb-4 shadow-sm" />
     );
   }
 }

@@ -4,7 +4,7 @@ import ContactsStack from './ContactsStack';
 export default class Contacts extends React.Component {
   render() {
     return (
-      <ContactsStack />
+      <ContactsStack class="card mb-4 shadow-sm" />
     );
   }
 }
