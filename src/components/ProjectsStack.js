@@ -8,9 +8,9 @@ export default function ProjectsStack() {
     <Container>
       <Row className="justify-content-md-center">
         <Col md="auto">
-          <Figure fluid>
+          <Figure fluid className="shadow">
             <Figure.Image
-              width={500}
+              width={1000}
               alt="screenshot of the project"
               src={require('./../common/images/kodflix-project.png')}
             />
@@ -30,13 +30,13 @@ export default function ProjectsStack() {
       </Row>
       <Row className="justify-content-md-center">
         <Col md="auto">
-          <Figure fluid>
+          <Figure fluid className="shadow">
             <Figure.Image
-              width={500}
+              width={1000}
               alt="screenshot of the project"
               src={require('./../common/images/react-forced-render.png')}
             />
-            <Figure.Caption className="lead">
+            <Figure.Caption className="lead text-primary">
               React forced render project
             </Figure.Caption>
             <Nav className="justify-content-center" activeKey="/home">
