@@ -6,6 +6,7 @@ import {
 export default function ProjectsStack() {
   return (
     <Container>
+      <h1 className="display-3 card mb-4 shadow-sm rounded">My projects</h1>
       <Row className="justify-content-md-center bg-light rounded">
         <Col md="auto">
           <Figure fluid className="shadow">
