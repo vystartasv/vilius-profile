@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/vilius-profile/static/css/main.584f321a.chunk.css",
+    "main.js": "/vilius-profile/static/js/main.dc0f561e.chunk.js",
+    "main.js.map": "/vilius-profile/static/js/main.dc0f561e.chunk.js.map",
+    "runtime~main.js": "/vilius-profile/static/js/runtime~main.5f6f9670.js",
+    "runtime~main.js.map": "/vilius-profile/static/js/runtime~main.5f6f9670.js.map",
+    "static/js/2.95227755.chunk.js": "/vilius-profile/static/js/2.95227755.chunk.js",
+    "static/js/2.95227755.chunk.js.map": "/vilius-profile/static/js/2.95227755.chunk.js.map",
+    "index.html": "/vilius-profile/index.html",
+    "precache-manifest.0f1dff2ce573a1161b1fb982a43d30b9.js": "/vilius-profile/precache-manifest.0f1dff2ce573a1161b1fb982a43d30b9.js",
+    "service-worker.js": "/vilius-profile/service-worker.js",
+    "static/css/main.584f321a.chunk.css.map": "/vilius-profile/static/css/main.584f321a.chunk.css.map",
+    "static/media/kodflix-project.png": "/vilius-profile/static/media/kodflix-project.3bb8412a.png",
+    "static/media/react-forced-render.png": "/vilius-profile/static/media/react-forced-render.cdc43f70.png"
+  }
+}
