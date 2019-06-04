@@ -8,9 +8,23 @@ export default class Projects extends React.Component {
     this.state = {
       projects: [
         {
-          alt: 'screenshot of the project',
-          img: 'team-main',
-          name: 'Alpha Properties',
+          images: [
+            {
+              alt: 'project landing page',
+              img: 'team-main',
+              name: 'Alpha Properties',
+            },
+            {
+              alt: 'body and search view',
+              img: 'team-body',
+              name: 'Property list and Search',
+            },
+            {
+              alt: 'property view',
+              img: 'team-property',
+              name: 'Property details page with location',
+            },
+          ],
           live: 'https://alpha-properties-app.appspot.com',
           liveDesc: 'Live application on Google App Engine',
           github: 'https://github.com/kodiri/alpha-props',
@@ -20,9 +34,18 @@ export default class Projects extends React.Component {
               + 'deployed on Google Cloud Platform uses Google App Engine and plain CSS.',
         },
         {
-          alt: 'screenshot of the project',
-          img: 'kodflix-project',
-          name: 'Kodflix',
+          images: [
+            {
+              alt: 'screenshot of the project',
+              img: 'kodflix-project',
+              name: 'Kodflix',
+            },
+            {
+              alt: 'show view view',
+              img: 'kodflix-movie',
+              name: 'Movie details page',
+            },
+          ],
           live: 'https://kodflix-by-vilius.herokuapp.com',
           liveDesc: 'Live application on Heroku',
           github: 'https://github.com/vystartasv/kodflix',
@@ -40,13 +63,11 @@ export default class Projects extends React.Component {
       <Container>
         <h1 className="display-3 card mb-4 shadow-sm rounded">My projects</h1>
         {this.state.projects.map(({
-          alt, img, name, live, liveDesc, github, githubDesc, description,
+          images, live, liveDesc, github, githubDesc, description,
         }) => (
           <ProjectsStack
             class="card mb-4 rounded"
-            alt={alt}
-            img={img}
-            name={name}
+            images={images}
             live={live}
             liveDesc={liveDesc}
             github={github}
