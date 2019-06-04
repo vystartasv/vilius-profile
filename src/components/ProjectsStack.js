@@ -3,52 +3,32 @@ import {
   Container, Figure, Nav, Row, Col,
 } from 'react-bootstrap';
 
-export default function ProjectsStack() {
+export default function ProjectsStack({
+  alt, img, name, live, liveDesc, github, githubDesc, description
+}) {
   return (
-    <Container>
-      <h1 className="display-3 card mb-4 shadow-sm rounded">My projects</h1>
-      <Row className="justify-content-md-center bg-light rounded">
-        <Col md="auto">
-          <Figure fluid className="shadow">
-            <Figure.Image
-              width={1000}
-              alt="screenshot of the project"
-              src={require('./../common/images/kodflix-project.png')}
-            />
-            <Figure.Caption className="lead">
-            Kodflix project
-            </Figure.Caption>
-            <Nav className="justify-content-center" activeKey="/home">
-              <Nav.Item>
-                <Nav.Link href="https://kodflix-by-vilius.herokuapp.com">Live application</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link href="https://github.com/vystartasv/kodflix">GitHub repository here</Nav.Link>
-              </Nav.Item>
-            </Nav>
-          </Figure>
-        </Col>
-      </Row>
-      <Row className="justify-content-md-center bg-light rounded">
-        <br />
-        <Col md="auto">
-          <Figure fluid className="shadow">
-            <Figure.Image
-              width={1000}
-              alt="screenshot of the project"
-              src={require('./../common/images/react-forced-render.png')}
-            />
-            <Figure.Caption className="lead">
-              React forced render project
-            </Figure.Caption>
-            <Nav className="justify-content-center" activeKey="/home">
-              <Nav.Item>
-                <Nav.Link href="https://github.com/vystartasv/react-forced-render">GitHub repository here</Nav.Link>
-              </Nav.Item>
-            </Nav>
-          </Figure>
-        </Col>
-      </Row>
-    </Container>
+    <Row className="justify-content-md-center bg-light rounded">
+      <Col md="auto">
+        <Figure fluid className="shadow">
+          <Figure.Image
+            width={1000}
+            alt={alt}
+            src={require(`./../common/images/${img}.jpg`)}
+          />
+          <Figure.Caption className="lead">
+            {name}
+          </Figure.Caption>
+          <Nav className="justify-content-center" activeKey="/home">
+            <Nav.Item>
+              <Nav.Link href={live}>{liveDesc}</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link href={github}>{githubDesc}</Nav.Link>
+            </Nav.Item>
+          </Nav>
+          <p>{description}</p>
+        </Figure>
+      </Col>
+    </Row>
   );
 }
