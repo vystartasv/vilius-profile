@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.0/workbox-sw.js");
 
 importScripts(
-  "/vilius-profile/precache-manifest.e8f7bb0ce93fbae4b4dbd0f3676aab28.js"
+  "/vilius-profile/precache-manifest.4ba614d99d91373a74a39c436bd856c7.js"
 );
 
 self.addEventListener('message', (event) => {
