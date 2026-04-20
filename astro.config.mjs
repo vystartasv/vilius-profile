@@ -13,7 +13,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  output: 'hybrid', // Enable SSR for API routes
   security: {
     checkOrigin: true,
   },
