@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "overrides": {
+    "yaml": "2.3.4"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
