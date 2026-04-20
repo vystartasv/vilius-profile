@@ -2,6 +2,7 @@ import { createConfig, type AuthConfig } from '../config/auth';
 // import { createId } from '@paralleloco/createId/genId';
 import type { Router } from '../utils/router';
 import { BaseAuthProvider, AuthError, InvalidTokenError, SessionExpiredError } from '../utils/AuthError';
+import { DefaultAuthProvider } from './DefaultAuthProvider';
 
 export interface AuthSession {
   id: string;
@@ -34,9 +35,9 @@ export class AuthManager {
   private authMiddleware: any;
   private pendingAuth: Set<string> = new Set();
 
-  constructor(config?: AuthConfig, identityService?: any) {
+  constructor(config?: AuthConfig, identityService?: any, provider?: BaseAuthProvider) {
     this.config = createConfig(config);
-    this.provider = new BaseAuthProvider(this.config, identityService);
+    this.provider = provider || new DefaultAuthProvider(this.config, identityService);
     this.identityService = identityService || {
       validate: (data: any) => this.identityService.validate?.(data) || data,
       fromUser: (name: string, email: string, role?: string) => this.identityService.fromUser?.(name, email, role) || { id: '', name, email, role: role || 'user' as const, createdAt: new Date(), updatedAt: new Date() },
