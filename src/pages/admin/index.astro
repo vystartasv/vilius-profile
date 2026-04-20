@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { AuthManager } from '../../auth/AuthManager';
+
+// Auth check - redirect if not authenticated
+const authManager = new AuthManager();
+const auth = authManager.whoami(Astro.request);
+
+if (!auth.authenticated) {
+  return Astro.redirect('/login?redirect=/admin');
+}
+
+const { identity } = auth;
+---
+
+<BaseLayout title="Admin | Vilius Vystartas">
+  <main class="container mx-auto px-6 py-12">
+    <div class="mb-8 flex items-center justify-between">
+      <h1 class="text-4xl font-semibold text-white">Admin Dashboard</h1>
+      
+      <form action="/api/auth/logout" method="POST">
+        <button
+          type="submit"
+          class="rounded-lg border border-white/15 px-5 py-2 text-sm text-slate-200 transition hover:border-cyan-300 hover:text-cyan-200"
+        >
+          Sign Out
+        </button>
+      </form>
+    </div>
+    
+    <div class="grid gap-6 lg:grid-cols-2">
+      <div class="card p-6">
+        <h2 class="mb-4 text-xl font-semibold text-white">Identity</h2>
+        <dl class="grid gap-2 text-slate-300">
+          <div class="flex justify-between border-b border-white/10 py-2">
+            <dt>Name</dt>
+            <dd class="text-white">{identity.name}</dd>
+          </div>
+          <div class="flex justify-between border-b border-white/10 py-2">
+            <dt>Email</dt>
+            <dd class="text-white">{identity.email}</dd>
+          </div>
+          <div class="flex justify-between border-b border-white/10 py-2">
+            <dt>Role</dt>
+            <dd class="text-cyan-200">{identity.role}</dd>
+          </div>
+          <div class="flex justify-between py-2">
+            <dt>ID</dt>
+            <dd class="font-mono text-sm text-slate-400">{identity.id}</dd>
+          </div>
+        </dl>
+      </div>
+      
+      <div class="card p-6">
+        <h2 class="mb-4 text-xl font-semibold text-white">Session Info</h2>
+        <p class="text-slate-300">
+          Authentication is working. This is a protected route that requires login.
+        </p>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

@@ -26,16 +26,29 @@ function createId(length = 21): string {
          'xxxxxxxxx'.split('').map(() => Math.random().toString(36).slice(2, 8)).join('');
 }
 
+// Global session store for SSR/API routes (persists across AuthManager instances)
+const globalSessions = new Map<string, AuthSession>();
+
 export class AuthManager {
   private config: AuthConfig;
   private provider: BaseAuthProvider;
   private identityService: { validate: any; fromUser: any; fromSession: any; fromToken: any; merge: any };
   private readonly router: Router;
-  private sessions: Map<string, AuthSession> = new Map();
+  private sessions: Map<string, AuthSession>;
   private authMiddleware: any;
   private pendingAuth: Set<string> = new Set();
 
-  constructor(config?: AuthConfig, identityService?: any, provider?: BaseAuthProvider) {
+  // Static accessor for global sessions (useful for testing)
+  static getGlobalSessions(): Map<string, AuthSession> {
+    return globalSessions;
+  }
+
+  // Clear all sessions (useful for testing)
+  static clearGlobalSessions(): void {
+    globalSessions.clear();
+  }
+
+  constructor(config?: AuthConfig, identityService?: any, provider?: BaseAuthProvider, options?: { useGlobalSessions?: boolean }) {
     this.config = createConfig(config);
     this.provider = provider || new DefaultAuthProvider(this.config, identityService);
     this.identityService = identityService || {
@@ -45,6 +58,8 @@ export class AuthManager {
       fromToken: (_token: string, _session: any) => null,
       merge: (existing: any, updates: any) => ({ ...existing, ...updates, updatedAt: new Date() }),
     };
+    // Use global sessions by default for SSR persistence
+    this.sessions = options?.useGlobalSessions !== false ? globalSessions : new Map();
   }
 
   setRouter(router: Router): this {
