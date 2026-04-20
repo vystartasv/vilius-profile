@@ -1,6 +1,7 @@
 ---
+id: foundation-patterns
 title: Microsoft 365 platform foundation
-summary: A reusable foundation for intranet, collaboration, and internal process delivery that combines SharePoint architecture, SPFx components, Power Platform workflows, and Azure integration points.
+summary: Reusable architecture for intranet, collaboration, and process automation—combining SharePoint structure, SPFx components, Power Platform governance, and Azure integration points.
 stack:
   - SharePoint Online
   - SPFx
@@ -9,10 +10,9 @@ stack:
   - Azure Functions
   - TypeScript
 outcomes:
-  - Establishes a repeatable delivery model instead of one-off site builds.
-  - Makes governance and future enhancements easier for enterprise teams.
-  - Creates a path for AI-assisted workflows on top of structured Microsoft 365 data.
+  - Reduced delivery time for new solutions by establishing repeatable patterns
+  - Enabled self-service content governance through structured information architecture
+  - Created foundation for AI-assisted workflows on structured M365 data
+  - Improved maintainability with component-based SPFx architecture
 featured: true
 ---
-
-Content placeholder for a future deep case study.

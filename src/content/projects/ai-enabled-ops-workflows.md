@@ -1,17 +1,17 @@
 ---
+id: ai-enabled-ops-workflows
 title: AI-enabled operational workflows
-summary: Practical workflow design that uses AI where it helps, especially summarisation, triage, drafting, and structured handoff, while keeping human review and governance in the loop.
+summary: Practical AI integration for document processing, triage, and content operations—using Azure OpenAI, SharePoint Premium, and Power Automate with proper governance and human oversight.
 stack:
   - Azure OpenAI
   - Power Automate
   - SharePoint Premium
   - Microsoft Graph
-  - Prompt design
+  - Custom connectors
 outcomes:
-  - Reduces repetitive internal work instead of adding novelty for its own sake.
-  - Keeps adoption grounded in measurable workflow improvements.
-  - Supports enterprise concerns like traceability, access boundaries, and approval points.
+  - Automated document summarization and metadata extraction
+  - Reduced manual triage time in support workflows
+  - Maintained enterprise compliance with audit trails and approval gates
+  - Delivered measurable time savings, not just novelty
 featured: true
 ---
-
-This is positioned as a practical delivery capability, not hype.

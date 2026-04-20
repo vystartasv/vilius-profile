@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html {
@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  @apply bg-slate-950 text-slate-100 antialiased;
+  @apply bg-slate-50 text-slate-800 antialiased;
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -22,17 +22,33 @@ section {
 }
 
 .card {
-  @apply rounded-3xl border border-white/10 bg-white/5 shadow-2xl shadow-slate-950/30 backdrop-blur;
+  @apply rounded-3xl border border-slate-200 bg-white shadow-lg shadow-slate-200/50;
 }
 
 .kicker {
-  @apply text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300;
+  @apply text-sm font-semibold uppercase tracking-[0.3em] text-cyan-600;
 }
 
 .section-title {
-  @apply text-3xl font-semibold text-white md:text-4xl;
+  @apply text-3xl font-semibold text-slate-900 md:text-4xl;
 }
 
 .prose-link {
-  @apply text-cyan-300 transition hover:text-cyan-200;
+  @apply text-cyan-600 transition hover:text-cyan-700;
+}
+
+/* Header card specific */
+header .card {
+  @apply bg-gradient-to-br from-white to-slate-50;
+}
+
+/* Button styles */
+button[type="submit"],
+a.rounded-full.bg-cyan-400 {
+  @apply bg-cyan-600 text-white;
+}
+
+button[type="submit"]:hover,
+a.rounded-full.bg-cyan-400:hover {
+  @apply bg-cyan-700;
 }

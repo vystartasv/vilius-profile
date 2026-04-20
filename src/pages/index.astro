@@ -21,28 +21,28 @@ const focusAreas = [
 
 <BaseLayout>
   <main>
-    <header class="card overflow-hidden">
+    <header class="card overflow-hidden bg-gradient-to-br from-cyan-50 to-slate-50">
       <div class="grid gap-10 px-8 py-10 md:grid-cols-[1.3fr_0.7fr] md:px-12 md:py-14">
         <div class="grid gap-6">
           <p class="kicker">Senior Microsoft 365 Platform Engineer</p>
           <div class="grid gap-4">
-            <h1 class="text-5xl font-semibold tracking-tight text-white md:text-7xl">
+            <h1 class="text-5xl font-semibold tracking-tight text-slate-900 md:text-7xl">
               Vilius Vystartas
             </h1>
-            <p class="max-w-3xl text-xl leading-9 text-slate-300 md:text-2xl">
+            <p class="max-w-3xl text-xl leading-9 text-slate-600 md:text-2xl">
               I design and ship Microsoft 365 solutions that are usable, governable, and grounded in real delivery outcomes, from SharePoint and SPFx through Power Platform, Azure, and AI-assisted workflows.
             </p>
           </div>
-          <div class="flex flex-wrap gap-3 text-sm font-medium text-slate-200">
-            <a class="rounded-full bg-cyan-400 px-5 py-3 text-slate-950 transition hover:bg-cyan-300" href="https://www.linkedin.com/in/vystartas/">LinkedIn</a>
-            <a class="rounded-full border border-white/15 px-5 py-3 transition hover:border-cyan-300 hover:text-cyan-200" href="https://github.com/vystartasv">GitHub</a>
-            <a class="rounded-full border border-white/15 px-5 py-3 transition hover:border-cyan-300 hover:text-cyan-200" href="mailto:vilius.vystartas@gmail.com">Email</a>
+          <div class="flex flex-wrap gap-3 text-sm font-medium">
+            <a class="rounded-full bg-cyan-600 px-5 py-3 text-white transition hover:bg-cyan-700" href="https://www.linkedin.com/in/vystartas/">LinkedIn</a>
+            <a class="rounded-full border border-slate-300 px-5 py-3 text-slate-700 transition hover:border-cyan-600 hover:text-cyan-700" href="https://github.com/vystartasv">GitHub</a>
+            <a class="rounded-full border border-slate-300 px-5 py-3 text-slate-700 transition hover:border-cyan-600 hover:text-cyan-700" href="mailto:vilius.vystartas@gmail.com">Email</a>
           </div>
         </div>
-        <div class="card grid content-start gap-5 p-6">
-          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Core focus</p>
-          <ul class="grid gap-3 text-base leading-7 text-slate-200">
-            {focusAreas.map((area) => <li class="rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3">{area}</li>)}
+        <div class="card grid content-start gap-5 p-6 bg-white">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Core focus</p>
+          <ul class="grid gap-3 text-base leading-7 text-slate-700">
+            {focusAreas.map((area) => <li class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">{area}</li>)}
           </ul>
         </div>
       </div>
@@ -52,22 +52,22 @@ const focusAreas = [
       id="experience"
       kicker="Experience"
       title="Platform engineering with delivery ownership"
-      intro="A clean content-led structure that can grow into case studies, talks, and deeper technical writing without rebuilding the site again."
+      intro="Enterprise consulting focused on Microsoft 365 architecture, SPFx development, Power Platform governance, and Azure integration."
     >
       <div class="grid gap-5">
         {experience.map(({ data }) => (
           <article class="card grid gap-4 p-6 md:p-8">
             <div class="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
               <div>
-                <h3 class="text-2xl font-semibold text-white">{data.title}</h3>
-                <p class="text-lg text-cyan-200">{data.company}</p>
+                <h3 class="text-2xl font-semibold text-slate-900">{data.title}</h3>
+                <p class="text-lg text-cyan-600">{data.company}</p>
               </div>
-              <p class="text-sm uppercase tracking-[0.18em] text-slate-400">{data.period}</p>
+              <p class="text-sm uppercase tracking-[0.18em] text-slate-500">{data.period}</p>
             </div>
-            <p class="max-w-4xl text-lg leading-8 text-slate-300">{data.summary}</p>
+            <p class="max-w-4xl text-lg leading-8 text-slate-600">{data.summary}</p>
             <ul class="grid gap-3 md:grid-cols-2">
               {data.highlights.map((item) => (
-                <li class="rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-4 text-slate-200">{item}</li>
+                <li class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-slate-700">{item}</li>
               ))}
             </ul>
           </article>
@@ -78,28 +78,22 @@ const focusAreas = [
     <Section
       id="projects"
       kicker="Selected work"
-      title="Solution patterns and product thinking"
-      intro="These starter entries intentionally position the site around enterprise delivery, internal platforms, and AI-assisted execution instead of generic portfolio pieces."
+      title="Solution patterns and delivery outcomes"
+      intro="Reusable architectures and practical implementations for enterprise Microsoft 365 environments."
     >
       <div class="grid gap-5 lg:grid-cols-2">
         {featuredProjects.map(({ data }) => (
           <article class="card grid gap-5 p-6 md:p-8">
             <div class="grid gap-3">
-              <h3 class="text-2xl font-semibold text-white">{data.title}</h3>
-              <p class="text-lg leading-8 text-slate-300">{data.summary}</p>
+              <h3 class="text-2xl font-semibold text-slate-900">{data.title}</h3>
+              <p class="text-lg leading-8 text-slate-600">{data.summary}</p>
             </div>
-            <div class="flex flex-wrap gap-2 text-sm text-cyan-100">
-              {data.stack.map((item) => <span class="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1.5">{item}</span>)}
+            <div class="flex flex-wrap gap-2 text-sm">
+              {data.stack.map((item) => <span class="rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1.5 text-cyan-700">{item}</span>)}
             </div>
-            <ul class="grid gap-3 text-slate-200">
-              {data.outcomes.map((outcome) => <li class="rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3">{outcome}</li>)}
+            <ul class="grid gap-3 text-slate-700">
+              {data.outcomes.map((outcome) => <li class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">{outcome}</li>)}
             </ul>
-            {(data.href || data.repo) && (
-              <div class="flex flex-wrap gap-4 text-sm font-medium">
-                {data.href && <a class="prose-link" href={data.href}>Live reference</a>}
-                {data.repo && <a class="prose-link" href={data.repo}>Repository</a>}
-              </div>
-            )}
           </article>
         ))}
       </div>
@@ -107,31 +101,34 @@ const focusAreas = [
 
     <Section
       id="writing"
-      kicker="Writing and signals"
-      title="Content foundation for future authority-building"
-      intro="The site now has a proper source structure for MDX-backed articles, notes, and case studies so new content can land fast."
+      kicker="Writing"
+      title="Notes and technical writing"
+      intro="Selected articles and insights on Microsoft 365 platform engineering."
     >
       <div class="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
         <div class="card p-6 md:p-8">
           <div class="grid gap-4">
-            {writing.map(({ data }) => (
-              <article class="grid gap-2 border-b border-white/10 pb-4 last:border-b-0 last:pb-0">
+            {writing.length > 0 ? writing.map(({ data }) => (
+              <article class="grid gap-2 border-b border-slate-200 pb-4 last:border-b-0 last:pb-0">
                 <p class="text-sm uppercase tracking-[0.18em] text-slate-500">{data.published}</p>
-                <h3 class="text-xl font-semibold text-white">{data.title}</h3>
-                <p class="leading-7 text-slate-300">{data.summary}</p>
+                <h3 class="text-xl font-semibold text-slate-900">{data.title}</h3>
+                <p class="leading-7 text-slate-600">{data.summary}</p>
                 <a class="prose-link text-sm font-medium" href={data.href}>Read</a>
               </article>
-            ))}
+            )) : (
+              <p class="text-slate-500">Writing coming soon. Follow on LinkedIn for updates.</p>
+            )}
           </div>
         </div>
         <aside class="card grid gap-4 p-6 md:p-8">
-          <h3 class="text-2xl font-semibold text-white">Built for iteration</h3>
-          <ul class="grid gap-3 text-slate-300">
-            <li>Astro + TypeScript + MDX baseline for source-controlled content.</li>
-            <li>Tailwind 4 styling layer with lightweight component structure.</li>
-            <li>GitHub Pages deployment path aligned to the existing repository.</li>
-            <li>Content collections ready for experience, projects, and writing.</li>
+          <h3 class="text-2xl font-semibold text-slate-900">Get in touch</h3>
+          <ul class="grid gap-3 text-slate-600">
+            <li>Enterprise Microsoft 365 consulting and solution architecture</li>
+            <li>SPFx development and component governance</li>
+            <li>Power Platform strategy and implementation</li>
+            <li>Azure integration and AI-enabled workflows</li>
           </ul>
+          <a class="prose-link font-medium" href="mailto:vilius.vystartas@gmail.com">vilius.vystartas@gmail.com</a>
         </aside>
       </div>
     </Section>
