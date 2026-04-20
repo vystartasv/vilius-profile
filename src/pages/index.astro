@@ -1,0 +1,139 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+
+const [experience, projects, writing] = await Promise.all([
+  getCollection('experience'),
+  getCollection('projects'),
+  getCollection('writing'),
+]);
+
+const featuredProjects = projects.filter(({ data }) => data.featured);
+const focusAreas = [
+  'SharePoint intranet and portal engineering',
+  'SPFx web parts, extensions, and component governance',
+  'Power Platform delivery across Power Apps, Automate, and governance',
+  'Azure-backed integration patterns for Microsoft 365 solutions',
+  'Practical AI-enabled workflows that reduce manual operations',
+];
+---
+
+<BaseLayout>
+  <main>
+    <header class="card overflow-hidden">
+      <div class="grid gap-10 px-8 py-10 md:grid-cols-[1.3fr_0.7fr] md:px-12 md:py-14">
+        <div class="grid gap-6">
+          <p class="kicker">Senior Microsoft 365 Platform Engineer</p>
+          <div class="grid gap-4">
+            <h1 class="text-5xl font-semibold tracking-tight text-white md:text-7xl">
+              Vilius Vystartas
+            </h1>
+            <p class="max-w-3xl text-xl leading-9 text-slate-300 md:text-2xl">
+              I design and ship Microsoft 365 solutions that are usable, governable, and grounded in real delivery outcomes, from SharePoint and SPFx through Power Platform, Azure, and AI-assisted workflows.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-3 text-sm font-medium text-slate-200">
+            <a class="rounded-full bg-cyan-400 px-5 py-3 text-slate-950 transition hover:bg-cyan-300" href="https://www.linkedin.com/in/vystartas/">LinkedIn</a>
+            <a class="rounded-full border border-white/15 px-5 py-3 transition hover:border-cyan-300 hover:text-cyan-200" href="https://github.com/vystartasv">GitHub</a>
+            <a class="rounded-full border border-white/15 px-5 py-3 transition hover:border-cyan-300 hover:text-cyan-200" href="mailto:vilius.vystartas@gmail.com">Email</a>
+          </div>
+        </div>
+        <div class="card grid content-start gap-5 p-6">
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Core focus</p>
+          <ul class="grid gap-3 text-base leading-7 text-slate-200">
+            {focusAreas.map((area) => <li class="rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3">{area}</li>)}
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <Section
+      id="experience"
+      kicker="Experience"
+      title="Platform engineering with delivery ownership"
+      intro="A clean content-led structure that can grow into case studies, talks, and deeper technical writing without rebuilding the site again."
+    >
+      <div class="grid gap-5">
+        {experience.map(({ data }) => (
+          <article class="card grid gap-4 p-6 md:p-8">
+            <div class="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+              <div>
+                <h3 class="text-2xl font-semibold text-white">{data.title}</h3>
+                <p class="text-lg text-cyan-200">{data.company}</p>
+              </div>
+              <p class="text-sm uppercase tracking-[0.18em] text-slate-400">{data.period}</p>
+            </div>
+            <p class="max-w-4xl text-lg leading-8 text-slate-300">{data.summary}</p>
+            <ul class="grid gap-3 md:grid-cols-2">
+              {data.highlights.map((item) => (
+                <li class="rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-4 text-slate-200">{item}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </Section>
+
+    <Section
+      id="projects"
+      kicker="Selected work"
+      title="Solution patterns and product thinking"
+      intro="These starter entries intentionally position the site around enterprise delivery, internal platforms, and AI-assisted execution instead of generic portfolio pieces."
+    >
+      <div class="grid gap-5 lg:grid-cols-2">
+        {featuredProjects.map(({ data }) => (
+          <article class="card grid gap-5 p-6 md:p-8">
+            <div class="grid gap-3">
+              <h3 class="text-2xl font-semibold text-white">{data.title}</h3>
+              <p class="text-lg leading-8 text-slate-300">{data.summary}</p>
+            </div>
+            <div class="flex flex-wrap gap-2 text-sm text-cyan-100">
+              {data.stack.map((item) => <span class="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1.5">{item}</span>)}
+            </div>
+            <ul class="grid gap-3 text-slate-200">
+              {data.outcomes.map((outcome) => <li class="rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3">{outcome}</li>)}
+            </ul>
+            {(data.href || data.repo) && (
+              <div class="flex flex-wrap gap-4 text-sm font-medium">
+                {data.href && <a class="prose-link" href={data.href}>Live reference</a>}
+                {data.repo && <a class="prose-link" href={data.repo}>Repository</a>}
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
+    </Section>
+
+    <Section
+      id="writing"
+      kicker="Writing and signals"
+      title="Content foundation for future authority-building"
+      intro="The site now has a proper source structure for MDX-backed articles, notes, and case studies so new content can land fast."
+    >
+      <div class="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
+        <div class="card p-6 md:p-8">
+          <div class="grid gap-4">
+            {writing.map(({ data }) => (
+              <article class="grid gap-2 border-b border-white/10 pb-4 last:border-b-0 last:pb-0">
+                <p class="text-sm uppercase tracking-[0.18em] text-slate-500">{data.published}</p>
+                <h3 class="text-xl font-semibold text-white">{data.title}</h3>
+                <p class="leading-7 text-slate-300">{data.summary}</p>
+                <a class="prose-link text-sm font-medium" href={data.href}>Read</a>
+              </article>
+            ))}
+          </div>
+        </div>
+        <aside class="card grid gap-4 p-6 md:p-8">
+          <h3 class="text-2xl font-semibold text-white">Built for iteration</h3>
+          <ul class="grid gap-3 text-slate-300">
+            <li>Astro + TypeScript + MDX baseline for source-controlled content.</li>
+            <li>Tailwind 4 styling layer with lightweight component structure.</li>
+            <li>GitHub Pages deployment path aligned to the existing repository.</li>
+            <li>Content collections ready for experience, projects, and writing.</li>
+          </ul>
+        </aside>
+      </div>
+    </Section>
+  </main>
+</BaseLayout>
