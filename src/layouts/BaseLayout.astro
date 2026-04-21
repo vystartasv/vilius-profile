@@ -17,11 +17,64 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0ea5e9" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="author" content="Vilius Vystartas" />
+    <meta name="publisher" content="Vilius Vystartas" />
+    <meta name="copyright" content="Vilius Vystartas" />
+    <meta name="robots" content="index, follow" />
+    <meta name="canonical" content="{Astro.url} " />
+    <meta name="rating" content="OG:RATING" />
+    <meta name="msapplication-TileColor" content="#0ea5e9" />
+    <meta name="msapplication-navbutton-color" content="#0ea5e9" />
+    <meta name="google-site-verification" content="" />
+    <meta name="yandex-verification" content="" />
+    <meta name="bing-verification" content="" />
+    <meta property="og:site_name" content="Vilius Vystartas" />
+    <meta property="og:title" content="Vilius Vystartas | Senior Microsoft 365 Platform Engineer" />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:updated_time" content="{Astro.url.url}" />
     <title>{title}</title>
+    <script type="application/ld+json">{JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      'name': 'Vilius Vystartas',
+      'jobTitle': 'Senior Microsoft 365 Platform Engineer',
+      'url': 'https://vystartasv.github.io',
+      'description': description,
+      'image': 'https://vystartasv.github.io/avatar.jpg',
+      'sameAs': [
+        'https://www.linkedin.com/in/vystartas/',
+        'https://github.com/vystartasv',
+        'mailto:vilius.vystartas@gmail.com'
+      ],
+      'hasWork': [
+        'https://www.linkedin.com/in/vystartas/',
+        'https://github.com/vystartasv'
+      ],
+      'knowsAbout': [
+        'SharePoint Online',
+        'SPFx',
+        'Power Platform',
+        'Power Apps',
+        'Power Automate',
+        'Power BI',
+        'Azure Functions',
+        'Microsoft Graph',
+        'TypeScript',
+        'JavaScript',
+        'Git',
+        'DevOps'
+      ]
+    }))}
   </head>
   <body>
     <slot />
   </body>
 </html>
+
+---

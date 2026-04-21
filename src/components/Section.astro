@@ -9,11 +9,13 @@ interface Props {
 const { id, kicker, title, intro } = Astro.props;
 ---
 
-<section id={id} class="grid gap-6">
+<section id={id} class="grid gap-6" aria-labelledby="section-{id}">
   <div class="grid gap-3">
-    <p class="kicker">{kicker}</p>
-    <h2 class="section-title">{title}</h2>
-    {intro && <p class="max-w-3xl text-lg leading-8 text-slate-300">{intro}</p>}
+    <p id="section-{id}-kicker" class="kicker">{kicker}</p>
+    <h2 id="section-{id}-heading" class="section-title">{title}</h2>
+    {intro && <p id="section-{id}-intro" class="max-w-3xl text-lg leading-8 text-slate-600">{intro}</p>}
   </div>
   <slot />
 </section>
+
+---

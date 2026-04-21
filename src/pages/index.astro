@@ -19,118 +19,136 @@ const focusAreas = [
 ];
 ---
 
-<BaseLayout>
-  <main>
-    <header class="card overflow-hidden bg-gradient-to-br from-cyan-50 to-slate-50">
+<BaseLayout title="Vilius Vystartas | Senior Microsoft 365 Platform Engineer" id="home-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <main id="main">
+    <header id="site-header" class="card overflow-hidden bg-gradient-to-br from-cyan-50 to-slate-50" role="banner">
       <div class="grid gap-10 px-8 py-10 md:grid-cols-[1.3fr_0.7fr] md:px-12 md:py-14">
         <div class="grid gap-6">
-          <p class="kicker">Senior Microsoft 365 Platform Engineer</p>
+          <span id="role-label" class="kicker">Senior Microsoft 365 Platform Engineer</span>
           <div class="grid gap-4">
             <h1 class="text-5xl font-semibold tracking-tight text-slate-900 md:text-7xl">
-              Vilius Vystartas
+              <span id="name-label">Vilius Vystartas</span>
             </h1>
-            <p class="max-w-3xl text-xl leading-9 text-slate-600 md:text-2xl">
+            <p id="bio-description" class="max-w-3xl text-xl leading-9 text-slate-600 md:text-2xl">
               I design and ship Microsoft 365 solutions that are usable, governable, and grounded in real delivery outcomes, from SharePoint and SPFx through Power Platform, Azure, and AI-assisted workflows.
             </p>
           </div>
-          <div class="flex flex-wrap gap-3 text-sm font-medium">
-            <a class="rounded-full bg-cyan-600 px-5 py-3 text-white transition hover:bg-cyan-700" href="https://www.linkedin.com/in/vystartas/">LinkedIn</a>
-            <a class="rounded-full border border-slate-300 px-5 py-3 text-slate-700 transition hover:border-cyan-600 hover:text-cyan-700" href="https://github.com/vystartasv">GitHub</a>
-            <a class="rounded-full border border-slate-300 px-5 py-3 text-slate-700 transition hover:border-cyan-600 hover:text-cyan-700" href="mailto:vilius.vystartas@gmail.com">Email</a>
+          <div class="flex flex-wrap gap-3 text-sm font-medium" id="social-section" aria-label="Social media links">
+            <a id="linkedin-link" class="rounded-full bg-cyan-600 px-5 py-3 text-white transition hover:bg-cyan-700" href="https://www.linkedin.com/in/vystartas/" aria-label="Connect with Vilius Vystartas on LinkedIn, opens in new window">LinkedIn</a>
+            <a id="github-link" class="rounded-full border border-slate-300 px-5 py-3 text-slate-700 transition hover:border-cyan-600 hover:text-cyan-700" href="https://github.com/vystartasv" aria-label="View Vilius Vystartas on GitHub, opens in new window">GitHub</a>
+            <a id="email-link" class="rounded-full border border-slate-300 px-5 py-3 text-slate-700 transition hover:border-cyan-600 hover:text-cyan-700" href="mailto:vilius.vystartas@gmail.com" aria-label="Email Vilius Vystartas">Email</a>
           </div>
         </div>
-        <div class="card grid content-start gap-5 p-6 bg-white">
-          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Core focus</p>
-          <ul class="grid gap-3 text-base leading-7 text-slate-700">
-            {focusAreas.map((area) => <li class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">{area}</li>)}
+        <section id="focus-section" aria-label="Core focus areas" class="card grid content-start gap-5 p-6 bg-white">
+          <p id="focus-heading" class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Core focus</p>
+          <ul id="focus-list" class="grid gap-3 text-base leading-7 text-slate-700">
+            {focusAreas.map((area, i) => <li id="focus-item-{i}" class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">{area}</li>)}
           </ul>
+          <p id="focus-description" class="text-xs text-slate-500 mt-2">These focus areas represent my primary expertise and experience in Microsoft 365 platform engineering.</p>
         </div>
       </div>
     </header>
 
-    <Section
-      id="experience"
-      kicker="Experience"
-      title="Platform engineering with delivery ownership"
-      intro="Enterprise consulting focused on Microsoft 365 architecture, SPFx development, Power Platform governance, and Azure integration."
-    >
+    <section id="experience-section" aria-labelledby="experience-heading"
+      aria-label="Experience history"
+      itemscope
+      itemtype="https://schema.org/Person">
+      <Section
+        id="experience"
+        kicker="Experience"
+        title="Platform engineering with delivery ownership"
+        intro="Enterprise consulting focused on Microsoft 365 architecture, SPFx development, Power Platform governance, and Azure integration."
+      >
       <div class="grid gap-5">
-        {experience.map(({ data }) => (
-          <article class="card grid gap-4 p-6 md:p-8">
+        {experience.map(({ data }, i) => (
+          <article id="experience-entry-{i}" class="card grid gap-4 p-6 md:p-8">
             <div class="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
               <div>
-                <h3 class="text-2xl font-semibold text-slate-900">{data.title}</h3>
+                <h3 id="job-title-{i}" class="text-2xl font-semibold text-slate-900">{data.title}</h3>
                 <p class="text-lg text-cyan-600">{data.company}</p>
               </div>
-              <p class="text-sm uppercase tracking-[0.18em] text-slate-500">{data.period}</p>
+              <p id="period-{i}" class="text-sm uppercase tracking-[0.18em] text-slate-500">{data.period}</p>
             </div>
             <p class="max-w-4xl text-lg leading-8 text-slate-600">{data.summary}</p>
             <ul class="grid gap-3 md:grid-cols-2">
-              {data.highlights.map((item) => (
-                <li class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-slate-700">{item}</li>
+              {data.highlights.map((item, hIndex) => (
+                <li id="highlight-{i}-{hIndex}" class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-slate-700">{item}</li>
               ))}
             </ul>
           </article>
         ))}
       </div>
-    </Section>
+    </section>
 
-    <Section
-      id="projects"
-      kicker="Selected work"
-      title="Solution patterns and delivery outcomes"
-      intro="Reusable architectures and practical implementations for enterprise Microsoft 365 environments."
-    >
+    <section id="projects-section" aria-labelledby="projects-heading"
+      aria-label="Selected projects"
+      itemscope
+      itemtype="https://schema.org/CreativeWork">
+      <Section
+        id="projects"
+        kicker="Selected work"
+        title="Solution patterns and delivery outcomes"
+        intro="Reusable architectures and practical implementations for enterprise Microsoft 365 environments."
+      >
       <div class="grid gap-5 lg:grid-cols-2">
-        {featuredProjects.map(({ data }) => (
-          <article class="card grid gap-5 p-6 md:p-8">
+        {featuredProjects.map(({ data, id }, i) => (
+          <article id="project-{id}" class="card grid gap-5 p-6 md:p-8">
             <div class="grid gap-3">
-              <h3 class="text-2xl font-semibold text-slate-900">{data.title}</h3>
-              <p class="text-lg leading-8 text-slate-600">{data.summary}</p>
+              <h3 id="project-title-{id}" class="text-2xl font-semibold text-slate-900">{data.title}</h3>
+              <p id="summary-{id}" class="text-lg leading-8 text-slate-600">{data.summary}</p>
             </div>
-            <div class="flex flex-wrap gap-2 text-sm">
-              {data.stack.map((item) => <span class="rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1.5 text-cyan-700">{item}</span>)}
+            <div id="tech-stack-{id}" class="flex flex-wrap gap-2 text-sm">
+              {data.stack.map((item, tIndex) => (
+                <span id="tech-tag-{id}-{tIndex}" class="rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1.5 text-cyan-700" role="listitem">{item}</span>
+              ))}
             </div>
-            <ul class="grid gap-3 text-slate-700">
-              {data.outcomes.map((outcome) => <li class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">{outcome}</li>)}
+            <ul id="outcomes-{id}" class="grid gap-3 text-slate-700">
+              {data.outcomes.map((outcome, oIndex) => (
+                <li id="outcome-{id}-{oIndex}" class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">{outcome}</li>
+              ))}
             </ul>
           </article>
         ))}
       </div>
-    </Section>
+    </section>
 
-    <Section
-      id="writing"
-      kicker="Writing"
-      title="Notes and technical writing"
-      intro="Selected articles and insights on Microsoft 365 platform engineering."
-    >
+    <section id="writing-section" aria-labelledby="writing-heading"
+      aria-label="Technical writing"
+      itemscope
+      itemtype="https://schema.org/Blog">
+      <Section
+        id="writing"
+        kicker="Writing"
+        title="Notes and technical writing"
+        intro="Selected articles and insights on Microsoft 365 platform engineering."
+      >
       <div class="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
         <div class="card p-6 md:p-8">
           <div class="grid gap-4">
-            {writing.length > 0 ? writing.map(({ data }) => (
-              <article class="grid gap-2 border-b border-slate-200 pb-4 last:border-b-0 last:pb-0">
+            {writing.length > 0 ? writing.map(({ data, id }, i) => (
+              <article id="article-{id}" class="grid gap-2 border-b border-slate-200 pb-4 last:border-b-0 last:pb-0">
                 <p class="text-sm uppercase tracking-[0.18em] text-slate-500">{data.published}</p>
-                <h3 class="text-xl font-semibold text-slate-900">{data.title}</h3>
+                <h3 id="article-title-{id}" class="text-xl font-semibold text-slate-900">{data.title}</h3>
                 <p class="leading-7 text-slate-600">{data.summary}</p>
-                <a class="prose-link text-sm font-medium" href={data.href}>Read</a>
+                <a id="read-article-{id}" class="prose-link text-sm font-medium" href={data.href} rel="noopener noreferrer" target="_blank">Read article</a>
               </article>
             )) : (
-              <p class="text-slate-500">Writing coming soon. Follow on LinkedIn for updates.</p>
+              <p class="text-slate-500">Writing coming soon. Follow on <a id="linkedin-write" class="prose-link" href="https://www.linkedin.com/in/vystartas/" aria-label="Connect with Vilius Vystartas on LinkedIn">LinkedIn</a> for updates.</p>
             )}
           </div>
         </div>
-        <aside class="card grid gap-4 p-6 md:p-8">
-          <h3 class="text-2xl font-semibold text-slate-900">Get in touch</h3>
-          <ul class="grid gap-3 text-slate-600">
-            <li>Enterprise Microsoft 365 consulting and solution architecture</li>
-            <li>SPFx development and component governance</li>
-            <li>Power Platform strategy and implementation</li>
-            <li>Azure integration and AI-enabled workflows</li>
+        <aside id="contact-section" aria-label="Contact information" class="card grid gap-4 p-6 md:p-8">
+          <h3 id="contact-heading" class="text-2xl font-semibold text-slate-900">Get in touch</h3>
+          <ul id="contact-list" class="grid gap-3 text-slate-600">
+            <li id="contact-item-1">Enterprise Microsoft 365 consulting and solution architecture</li>
+            <li id="contact-item-2">SPFx development and component governance</li>
+            <li id="contact-item-3">Power Platform strategy and implementation</li>
+            <li id="contact-item-4">Azure integration and AI-enabled workflows</li>
           </ul>
-          <a class="prose-link font-medium" href="mailto:vilius.vystartas@gmail.com">vilius.vystartas@gmail.com</a>
+          <p id="contact-email">Email me at <a id="email-contact" class="prose-link font-medium" href="mailto:vilius.vystartas@gmail.com" aria-label="Email Vilius Vystartas">vilius.vystartas@gmail.com</a></p>
         </aside>
       </div>
-    </Section>
+    </section>
   </main>
 </BaseLayout>
