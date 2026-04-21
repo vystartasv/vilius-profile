@@ -1,5 +1,5 @@
 ---
-id: foundation-patterns
+id: m365-platform-foundation
 title: Microsoft 365 platform foundation
 summary: Reusable architecture for intranet, collaboration, and process automation—combining SharePoint structure, SPFx components, Power Platform governance, and Azure integration points.
 stack:

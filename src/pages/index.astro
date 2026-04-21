@@ -50,7 +50,9 @@ const focusAreas = [
       </div>
     </header>
 
-    <section id="experience-section" aria-labelledby="experience-heading"
+    <span id="experience-heading">Experience</span>
+    <section aria-labelledby="experience-heading">
+      <h2 id="experience-heading" class="section-title">Platform engineering with delivery ownership</h2>
       aria-label="Experience history"
       itemscope
       itemtype="https://schema.org/Person">
@@ -65,7 +67,7 @@ const focusAreas = [
           <article id="experience-entry-{i}" class="card grid gap-4 p-6 md:p-8">
             <div class="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
               <div>
-                <h3 id="job-title-{i}" class="text-2xl font-semibold text-slate-900">{data.title}</h3>
+                <h4 id="job-title-{i}" class="text-2xl font-semibold text-slate-900">{data.title}</h4>
                 <p class="text-lg text-cyan-600">{data.company}</p>
               </div>
               <p id="period-{i}" class="text-sm uppercase tracking-[0.18em] text-slate-500">{data.period}</p>
@@ -95,7 +97,7 @@ const focusAreas = [
         {featuredProjects.map(({ data, id }, i) => (
           <article id="project-{id}" class="card grid gap-5 p-6 md:p-8">
             <div class="grid gap-3">
-              <h3 id="project-title-{id}" class="text-2xl font-semibold text-slate-900">{data.title}</h3>
+              <h4 id="project-title-{id}" class="text-2xl font-semibold text-slate-900">{data.title}</h4>
               <p id="summary-{id}" class="text-lg leading-8 text-slate-600">{data.summary}</p>
             </div>
             <div id="tech-stack-{id}" class="flex flex-wrap gap-2 text-sm">
@@ -129,7 +131,7 @@ const focusAreas = [
             {writing.length > 0 ? writing.map(({ data, id }, i) => (
               <article id="article-{id}" class="grid gap-2 border-b border-slate-200 pb-4 last:border-b-0 last:pb-0">
                 <p class="text-sm uppercase tracking-[0.18em] text-slate-500">{data.published}</p>
-                <h3 id="article-title-{id}" class="text-xl font-semibold text-slate-900">{data.title}</h3>
+                <h4 id="article-title-{id}" class="text-xl font-semibold text-slate-900">{data.title}</h4>
                 <p class="leading-7 text-slate-600">{data.summary}</p>
                 <a id="read-article-{id}" class="prose-link text-sm font-medium" href={data.href} rel="noopener noreferrer" target="_blank">Read article</a>
               </article>
@@ -139,7 +141,7 @@ const focusAreas = [
           </div>
         </div>
         <aside id="contact-section" aria-label="Contact information" class="card grid gap-4 p-6 md:p-8">
-          <h3 id="contact-heading" class="text-2xl font-semibold text-slate-900">Get in touch</h3>
+          <h4 id="contact-heading" class="text-2xl font-semibold text-slate-900">Get in touch</h4>
           <ul id="contact-list" class="grid gap-3 text-slate-600">
             <li id="contact-item-1">Enterprise Microsoft 365 consulting and solution architecture</li>
             <li id="contact-item-2">SPFx development and component governance</li>
