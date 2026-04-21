@@ -1,44 +1,48 @@
-# Coding Recovery Log - vilius-profile
+# Project Status - vilius-profile
 
-**Project Path:** ~/Projects/vilius-profile  
-**Last Updated:** 2026-04-20 11:46 UTC  
+**Project Path:** `~/Projects/vilius-profile`  
+**Last Updated:** 2026-04-21 22:45 BST
 
 ## Current State
 
-- Git repo: Fixed and active
-- Auth layer: **GREEN PHASE** ✅ (17 unit tests + 8 integration tests = 25/25 passing)
-- Framework: Astro with SSR enabled
+- Project direction: **repositioned as a static personal profile site**
+- Framework: Astro static build
+- Deployment path: GitHub Pages via Actions on push to `main`
+- Local status: **build passing** ✅
+- Deployment status: **not deployed yet** (changes not committed/pushed)
 
-## Latest Changes (2026-04-20 11:46)
+## Latest Changes
 
-**Integration Phase Complete:**
-- Login page (`/login`) with demo credentials display
-- Admin dashboard (`/admin`) - protected route
-- API routes: `/api/auth/login`, `/api/auth/logout`
-- Middleware: Global auth context attachment
-- Session persistence: Global session store for SSR
-- All 25 tests passing (17 unit + 8 integration)
+**Profile rewrite update completed:**
+- refreshed homepage hero copy and positioning
+- added profile highlight stats
+- aligned messaging toward Microsoft 365 platform engineering + front-end delivery
+- cleaned up broken/awkward homepage structure in `src/pages/index.astro`
+- verified static build output with `npm run build`
 
-## Auth Features
+## Files Changed
 
-- Mock credentials: `admin@example.com` / `admin123`
-- Session-based auth with cookie storage
-- Bearer token support for API requests
-- Protected route middleware
-- Role-based identity (`admin`, `user`)
+- `src/pages/index.astro` — updated homepage copy and structure
+- `HANDOFF.md` — present as untracked project note
+
+## Verification
+
+- `npm run build` ✅ passed
+
+## Current Git State
+
+- Modified: `src/pages/index.astro`
+- Untracked: `HANDOFF.md`
+- Branch: `main`
+- Remote: `git@github.com:vystartasv/vilius-profile.git`
 
 ## Next Steps
 
-- [ ] Connect to real identity provider (Azure AD, etc.)
-- [ ] Add user registration flow
-- [ ] Password reset functionality
-- [ ] Rate limiting on login attempts
-
-## Commits
-
-- `c926f46` - Initial commit after worktree recovery  
-- `29a868e` - GREEN phase: AuthManager uses DefaultAuthProvider  
-- `CURRENT` - Integration phase: login/logout pages, API routes, middleware
+- [ ] Review homepage copy visually in browser
+- [ ] Decide whether `HANDOFF.md` should be committed or ignored
+- [ ] Commit profile update
+- [ ] Push to `main` to trigger GitHub Pages deployment
+- [ ] Confirm deployed site after Actions completes
 
 ---
-*Last action: Completed auth integration phase with full test coverage*
+*Last action: updated homepage profile content and confirmed successful local build.*
