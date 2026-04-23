@@ -133,20 +133,20 @@ const introStats = [
       intro="Selected articles and insights on Microsoft 365 platform engineering."
     >
       <div class="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]" aria-label="Technical writing and contact details">
-        <div class="card p-6 md:p-8">
-          <div class="grid gap-4">
-            {writing.length > 0 ? writing.map(({ data, id }) => (
-              <article id={`article-${id}`} class="grid gap-2 border-b border-slate-200 pb-4 last:border-b-0 last:pb-0">
-                <p class="text-sm uppercase tracking-[0.18em] text-slate-500">{data.published}</p>
-                <h4 id={`article-title-${id}`} class="text-xl font-semibold text-slate-900">{data.title}</h4>
-                <p class="leading-7 text-slate-600">{data.summary}</p>
-                <a id={`read-article-${id}`} class="prose-link text-sm font-medium" href={data.href} rel="noopener noreferrer" target="_blank">Read article</a>
-              </article>
-            )) : (
-              <p class="text-slate-500">Writing coming soon. Follow on <a id="linkedin-write" class="prose-link" href="https://www.linkedin.com/in/vystartas/" aria-label="Connect with Vilius Vystartas on LinkedIn">LinkedIn</a> for updates.</p>
-            )}
+        {writing.length > 0 && (
+          <div class="card p-6 md:p-8">
+            <div class="grid gap-4">
+              {writing.map(({ data, id }) => (
+                <article id={`article-${id}`} class="grid gap-2 border-b border-slate-200 pb-4 last:border-b-0 last:pb-0">
+                  <p class="text-sm uppercase tracking-[0.18em] text-slate-500">{data.published}</p>
+                  <h4 id={`article-title-${id}`} class="text-xl font-semibold text-slate-900">{data.title}</h4>
+                  <p class="leading-7 text-slate-600">{data.summary}</p>
+                  <a id={`read-article-${id}`} class="prose-link text-sm font-medium" href={data.href} rel="noopener noreferrer" target="_blank">Read article</a>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
         <aside id="contact-section" aria-label="Contact information" class="card grid gap-4 p-6 md:p-8">
           <h4 id="contact-heading" class="text-2xl font-semibold text-slate-900">Get in touch</h4>
           <ul id="contact-list" class="grid gap-3 text-slate-600">
